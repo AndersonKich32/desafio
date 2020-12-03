@@ -14,7 +14,12 @@ module.exports = {
             try{
 
                 let pesquisa = jsonObj.filter(function(pesq){
-                return pesq.name.includes(value) || pesq.country.includes(value) || pesq.subcountry.includes(value)             
+                    let nome = pesq.name. toUpperCase()
+                    let estado = pesq.country. toUpperCase()
+                    let cidade = pesq.subcountry. toUpperCase()
+                   
+                   if(nome.includes(value. toUpperCase()) || estado.includes(value. toUpperCase()) || cidade.includes(value. toUpperCase()))
+                return pesq                 
                 })
         
                 existsOrError(pesquisa, 'Error, city ​​does not exist!')
